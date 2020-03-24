@@ -1,31 +1,27 @@
 # Custom Keyboard
 
-![Custom Keyboard](https://github.com/huubao2309/custom_keyboard/blob/master/images/custom_keyboard.gif)
+![Custom Keyboard](https://github.com/huubao2309/touch_show_widget/blob/master/images/popover.gif)
 
-## Setup
-
-### 1. Project has use lib "back_button_interceptor" at `pubspec.yaml` file:
+## Use
 
 ```dart
-dependencies:
-  back_button_interceptor: ^4.0.6
-```
-
-### 2. Use for your screen:
-
-```dart
- //Added KeyboardRootWidget
- child: KeyboardRootWidget(
-     child: ...,
- ),
-```
-
-### 3. Use at TextField:
-
-```dart
-   TextField(
-       controller: textEditingController,
-       decoration: InputDecoration(labelText: 'label text'),
-       keyboardType: NumberKeyboard.inputType, // Call at Keyboard type
-   ),
+child: CupertinoPopoverButton(
+  child: Container(
+    // ...
+  ),
+  popoverBuild: (context) {
+     return CupertinoPopoverMenuList(
+       children: <Widget>[
+         CupertinoPopoverMenuItem(
+           leading: Icon(Icons.add),
+           child: Text("Insert"),
+          ),
+         CupertinoPopoverMenuItem(
+           // ...
+         ),
+         // ...
+       ],
+     );
+  },
+),
 ```
