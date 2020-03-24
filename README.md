@@ -1,16 +1,31 @@
-# custom_keyboard
+# Custom Keyboard
 
-A new Flutter project.
+![Custom Keyboard](https://github.com/huubao2309/custom_keyboard/blob/master/images/custom_keyboard.gif)
 
-## Getting Started
+## Setup
 
-This project is a starting point for a Flutter application.
+### 1. Project has use lib "back_button_interceptor" at `pubspec.yaml` file:
 
-A few resources to get you started if this is your first Flutter project:
+```dart
+dependencies:
+  back_button_interceptor: ^4.0.6
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### 2. Use for your screen:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+ //Added KeyboardRootWidget
+ home: KeyboardRootWidget(
+     child: ...,
+ ),
+```
+
+### 3. Use at TextField:
+
+```dart
+   TextField(
+       controller: textEditingController,
+       decoration: InputDecoration(labelText: 'label text'),
+       keyboardType: NumberKeyboard.inputType, // Call at Keyboard type
+   ),
+```
