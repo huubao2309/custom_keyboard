@@ -15,7 +15,7 @@ dependencies:
 
 ```dart
  //Added KeyboardRootWidget
- home: KeyboardRootWidget(
+ child: KeyboardRootWidget(
      child: ...,
  ),
 ```
